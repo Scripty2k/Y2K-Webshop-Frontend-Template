@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cartTotalPriceElement.textContent = total.toFixed(2);
     };
 
-    // Function to render items in the cart modal (MODIFIED)
+    // Function to render items in the cart modal (MODIFIED to remove image)
     const renderCartItems = () => {
         cartItemsContainer.innerHTML = ''; // Clear previous items
 
@@ -61,13 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 listItem.classList.add('cart-item');
                 // Add data-index attribute to list item or directly to button later
                 listItem.innerHTML = `
-                    <img src="${item.imgSrc}" alt="${item.name}" class="cart-item-image">
                     <div class="cart-item-details">
                         <span class="cart-item-name">${item.name}</span>
                         <span class="cart-item-price">$ ${item.price.toFixed(2)}</span>
                     </div>
                     <button class="cart-item-remove-btn" data-index="${index}" aria-label="Remove ${item.name}">X</button>
-                `; // Added remove button with data-index
+                `; // Removed the image tag
 
                 list.appendChild(listItem);
 

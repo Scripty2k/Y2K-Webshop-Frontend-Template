@@ -11,8 +11,8 @@ body {
     line-height: 1.5;
     color: #000000; /* Black text often standard */
     /* Cheerful blue gradient background */
-    background: linear-gradient(to bottom, #7bceff, #a4dfff);
-    background-attachment: fixed; /* Prevent gradient scrolling */
+    background: url('back.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensure the image covers the entire background */
 }
 
 /* Optional: Add pixel font */
@@ -132,6 +132,7 @@ body {
     -webkit-text-fill-color: transparent; /* Make text transparent to show bg */
     text-shadow: 1px 1px #fff, /* White highlight */
                  -1px -1px #00305a; /* Dark blue shadow */
+    background-clip: text; /* Standard property for compatibility */
 }
 
 /* Product Grid - Y2K */
@@ -152,6 +153,25 @@ body {
     flex-direction: column;
     box-shadow: 3px 3px 5px rgba(0,0,0,0.4); /* Harsher shadow */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative; /* Required for shine effect */
+    overflow: hidden; /* Ensure shine effect stays within bounds */
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.39), rgba(255, 255, 255, 0.3)); /* Increased opacity */
+    transform: rotate(45deg);
+    transition: transform 0.5s ease;
+    pointer-events: none; /* Prevent interaction with the shine effect */
+}
+
+.product-card:hover::before {
+    transform: translate(100%, 100%) rotate(45deg); /* Move shine across the card */
 }
 
 .product-card:hover {
