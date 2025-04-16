@@ -1,0 +1,412 @@
+/* Y2K Theme Reset & Defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Common Y2K base font */
+    font-family: 'Tahoma', 'Verdana', sans-serif;
+    line-height: 1.5;
+    color: #000000; /* Black text often standard */
+    /* Cheerful blue gradient background */
+    background: linear-gradient(to bottom, #7bceff, #a4dfff);
+    background-attachment: fixed; /* Prevent gradient scrolling */
+}
+
+/* Optional: Add pixel font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/* Example usage: font-family: 'Press Start 2P', cursive; */
+
+.container {
+    max-width: 1000px; /* Slightly narrower container common */
+    margin: 0 auto;
+    padding: 0 15px;
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white container bg */
+    border: 1px solid #ffffff; /* White border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Simple shadow */
+}
+
+/* Header Styling - Y2K */
+.site-header {
+    /* Bright pink header! */
+    background: linear-gradient(to bottom, #ff7eb9, #ff99cc);
+    padding: 10px 0;
+    border-bottom: 3px outset #ffc1e3; /* Bevel effect */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none; /* Remove container background within header */
+    box-shadow: none;
+    border: none;
+}
+
+.logo {
+    /* Using a pixel font for the logo */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5em; /* Pixel fonts are often best smaller */
+    color: #ffffff; /* White logo */
+    text-shadow: 2px 2px #c7006e; /* Pink shadow */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 20px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #ffffff; /* White nav links */
+    font-weight: bold; /* Bold common */
+    font-size: 0.9em;
+    text-shadow: 1px 1px #c7006e;
+    padding: 5px 8px;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a:focus {
+    color: #ff7eb9; /* Pink text on hover */
+    background-color: #ffffff; /* White background on hover */
+    border: 1px solid #ff7eb9; /* Pink border */
+    text-shadow: none;
+}
+
+.header-cart {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    background-color: #ffffff; /* White background for cart icon */
+    padding: 5px 10px;
+    border-radius: 15px; /* Rounded pill shape */
+    border: 2px solid #ff7eb9; /* Pink border */
+}
+
+.cart-icon {
+    font-size: 1.3em;
+    color: #ff7eb9; /* Pink icon */
+    margin-right: 8px;
+}
+
+.cart-count {
+    background-color: #00d9e9; /* Bright cyan bubble */
+    color: #000000; /* Black text */
+    font-size: 0.8em;
+    padding: 1px 5px;
+    border-radius: 50%;
+    font-weight: bold;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    border: 1px solid #007078; /* Dark cyan border */
+    transition: transform 0.2s ease;
+}
+
+/* Main Content Styling - Y2K */
+.main-content {
+    padding: 30px 15px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 30px;
+    /* Shiny/Gel Title Effect */
+    font-family: 'Arial Black', Gadget, sans-serif; /* Chunky font */
+    font-size: 2.2em;
+    color: #00529b; /* Dark Blue */
+    background: linear-gradient(to bottom, #a4dfff, #7bceff); /* Blue gradient bg */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Make text transparent to show bg */
+    text-shadow: 1px 1px #fff, /* White highlight */
+                 -1px -1px #00305a; /* Dark blue shadow */
+}
+
+/* Product Grid - Y2K */
+.product-grid {
+    display: grid;
+    /* Slightly more packed grid */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+/* Product Card Styling - Y2K */
+.product-card {
+    background: linear-gradient(to bottom right, #f0f0f0, #cccccc); /* Silver gradient */
+    border-radius: 5px; /* Less pronounced radius */
+    overflow: hidden;
+    border: 2px outset #e0e0e0; /* Bevel border */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.4); /* Harsher shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translate(-2px, -2px); /* Slight shift */
+    box-shadow: 5px 5px 8px rgba(0,0,0,0.5);
+    border-style: inset; /* Change bevel on hover */
+}
+
+.product-image {
+    width: calc(100% - 20px); /* Inset image slightly */
+    height: 180px;
+    object-fit: contain; /* Often contained, not cover */
+    display: block;
+    margin: 10px auto; /* Center image with margin */
+    border: 1px solid #aaaaaa; /* Grey border around image */
+    background-color: #ffffff; /* White background behind image */
+}
+
+.product-title {
+    font-family: 'Arial Black', sans-serif; /* Bold, blocky font */
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px 15px 5px;
+    color: #0000cc; /* Bright blue title */
+    text-align: center;
+}
+
+.product-description {
+    font-size: 0.9em;
+    color: #333333; /* Dark grey text */
+    margin: 0 15px 10px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.product-price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #008000; /* Standard green price */
+    margin: 0 15px 10px;
+    text-align: right;
+    text-shadow: 1px 1px #ccffcc; /* Light green glow */
+}
+
+/* Button Styling - Y2K */
+.btn {
+    display: block;
+    width: calc(100% - 30px);
+    padding: 8px 15px; /* Slightly smaller padding */
+    margin: 0 15px 15px;
+    /* Aqua button effect */
+    background: linear-gradient(to bottom, #7bfaff, #00d9e9); /* Cyan gradient */
+    color: #000000; /* Black text */
+    text-align: center;
+    border: 2px outset #a4feff; /* Light cyan bevel */
+    border-radius: 15px; /* Pill shape buttons */
+    font-size: 0.9em;
+    font-weight: bold; /* Bold button text */
+    cursor: pointer;
+    text-decoration: none;
+    text-shadow: 1px 1px #ffffff; /* White highlight */
+    transition: all 0.1s ease; /* Faster transition */
+}
+
+.btn:hover,
+.btn:focus {
+    background: linear-gradient(to bottom, #a4feff, #7bfaff); /* Lighter gradient */
+    border-style: inset; /* Inset bevel on hover */
+    color: #00529b; /* Dark blue text on hover */
+    outline: none;
+    box-shadow: 0 0 5px #ffffff; /* White glow */
+}
+
+.btn:active {
+    transform: translate(1px, 1px); /* Shift button down/right */
+    box-shadow: none;
+}
+
+.btn:disabled {
+    background: #cccccc; /* Grey disabled */
+    border: 2px inset #aaaaaa;
+    cursor: not-allowed;
+    color: #777777;
+    text-shadow: none;
+    opacity: 0.7;
+}
+
+/* Footer Styling - Y2K */
+.site-footer {
+    background-color: #404040; /* Dark grey footer */
+    color: #00ff00; /* Bright green text */
+    padding: 15px 0;
+    margin-top: 30px;
+    text-align: center;
+    border-top: 3px groove #606060; /* Groove border */
+    font-size: 0.8em;
+    font-family: 'Courier New', Courier, monospace; /* Monospace font */
+}
+
+.site-footer p {
+    margin: 0;
+    text-shadow: 1px 1px #000000;
+}
+
+/* --- Y2K CART MODAL STYLES --- */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* Semi-transparent purple overlay */
+    background-color: rgba(128, 0, 128, 0.5);
+    backdrop-filter: blur(3px); /* Frosted glass effect */
+    z-index: 2001;
+}
+
+.modal-content {
+    position: relative;
+    /* Silver modal */
+    background: linear-gradient(to bottom right, #e8e8e8, #b8b8b8);
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px; /* Keep some radius */
+    border: 3px outset #cccccc; /* Bevel border */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    z-index: 2002;
+    width: 90%;
+    max-width: 550px; /* Slightly smaller max-width */
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-close {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    /* Red 'X' button */
+    color: #ffffff;
+    background-color: #ff0000;
+    border: 2px outset #ff8080;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 20px; /* Center the 'X' */
+    text-align: center;
+    text-shadow: 1px 1px #800000;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    background-color: #cc0000;
+    border-style: inset;
+    outline: none;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #00008b; /* Dark Blue */
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.5em;
+    text-transform: uppercase; /* Uppercase title */
+    letter-spacing: 1px; /* Add spacing */
+}
+
+#cart-items-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7); /* Slightly see-through white bg */
+    border: 1px solid #aaaaaa;
+    border-radius: 4px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #999999; /* Dashed separator */
+    list-style: none;
+    /* Add position relative for absolute positioning of button if needed */
+    position: relative;
+    padding-right: 35px; /* Add space for the remove button */
+}
+.cart-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    /* Remove margin-right if it interferes with button positioning */
+    /* margin-right: 10px; */
+}
+
+/* NEW: Style for the Remove Button */
+.cart-item-remove-btn {
+    position: absolute; /* Position it within the cart-item li */
+    top: 50%;           /* Center vertically */
+    right: 5px;         /* Position on the right */
+    transform: translateY(-50%); /* Fine-tune vertical centering */
+    background-color: #ff6666; /* Lighter red */
+    color: #ffffff;
+    border: 1px outset #ff9999;
+    border-radius: 50%; /* Circular */
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 19px; /* Adjust to center 'X' */
+    text-align: center;
+    cursor: pointer;
+    padding: 0; /* Remove default padding */
+    text-shadow: 1px 1px #cc0000;
+    transition: all 0.1s ease;
+}
+
+.cart-item-remove-btn:hover,
+.cart-item-remove-btn:focus {
+    background-color: #ff3333; /* Darker red */
+    border-style: inset;
+    outline: none;
+}
+
+.cart-item-remove-btn:active {
+    transform: translateY(-50%) scale(0.9); /* Add scale effect */
+}
